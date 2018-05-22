@@ -29,3 +29,5 @@ scoreboard players tag @a[tag=!firstRunDG] add ranStartDG
 scoreboard players reset @a[score_quitDG_min=1] quitDG
 
 #Always Run
+execute @e[tag=update_unknown_UI] ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_1
+scoreboard players tag @e[tag=update_unknown_UI] remove update_unknown_UI
