@@ -439,5 +439,3 @@ execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=GreenConcretePowderInSlot22] ~
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=RedConcretePowderInSlot22] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add RedConcretePowderInSlot22 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=BlackConcretePowderInSlot22] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add BlackConcretePowderInSlot22 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=StructureBlockInSlot22] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add StructureBlockInSlot22 
-scoreboard players tag @e[tag=pasteSlotTags] remove pasteSlotTags 
-scoreboard players tag @e[tag=copySlotTags] remove copySlotTags 

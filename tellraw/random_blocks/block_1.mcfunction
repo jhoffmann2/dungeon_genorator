@@ -13,6 +13,11 @@ scoreboard players tag @s remove ui5
 scoreboard players tag @s remove ui6
 scoreboard players tag @s remove ui7
 
+#execute @e[name=block1] ~ ~ ~ function block_placer:tags/inventorytest/clear_hotbar_slot_tags
+scoreboard players tag @s add copySlotTags
+scoreboard players tag @e[name=block1] add pasteSlotTags
+function dungeon_genorator:block_placer_helper/copy_slot_tags/copy_hotbar_tags
+
 playsound minecraft:ui.button.click ambient @s ~ ~ ~
 
 scoreboard players tag @s remove displaying_hotbar 

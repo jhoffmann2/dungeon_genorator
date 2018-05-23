@@ -13,7 +13,10 @@ scoreboard players tag @s remove ui5
 scoreboard players tag @s remove ui6
 scoreboard players tag @s remove ui7
 
+function block_placer:tags/inventorytest/clear_hotbar_slot_tags
+
 playsound minecraft:ui.button.click ambient @s ~ ~ ~
+
 tellraw @s ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    SET RANDOM BLOCKS    \n","color":"aqua","bold":true,"underlined":true}]
 
 tellraw @s ["",{"text":"           ","color":"gray"},{"text":"- Set Block 1 -","color":"light_purple","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_1"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
@@ -30,3 +33,5 @@ tellraw @s ["",{"text":"          ","color":"gray"},{"text":"- Set Block 10 -","
 tellraw @s ["",{"text":"\n              ","color":"gray"},{"text":"| Reload |","color":"gray","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/set"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
 tellraw @s ["",{"text":"               ","color":"gray"},{"text":"| Back |","color":"gray","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
 tellraw @s ["",{"text":" ##################### ","color":"aqua","bold":true,"underlined":true,"italic":false}]
+
+

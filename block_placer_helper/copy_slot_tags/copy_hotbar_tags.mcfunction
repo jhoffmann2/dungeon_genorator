@@ -1,0 +1,9 @@
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot0
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot1
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot2
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot3
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot4
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot5
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot6
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot7
+function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot8
