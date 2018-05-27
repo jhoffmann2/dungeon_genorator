@@ -7,3 +7,6 @@ function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot5
 function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot6
 function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot7
 function dungeon_genorator:block_placer_helper/copy_slot_tags/slot/slot8
+
+scoreboard players tag @e[tag=pasteSlotTags] remove pasteSlotTags
+scoreboard players tag @e[tag=copySlotTags] remove copySlotTags

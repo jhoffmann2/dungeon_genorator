@@ -6,7 +6,7 @@
 # Description:	fill all the rooms and their content with air
 ######################################################################################
 
-kill @e[tag=randomized_block]
+kill @e[tag=random_block]
 kill @e[type=item_frame]
 kill @e[type=painting]
 

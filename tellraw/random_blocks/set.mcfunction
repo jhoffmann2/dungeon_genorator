@@ -13,6 +13,17 @@ scoreboard players tag @s remove ui5
 scoreboard players tag @s remove ui6
 scoreboard players tag @s remove ui7
 
+scoreboard players tag @s remove editBlock1
+scoreboard players tag @s remove editBlock2
+scoreboard players tag @s remove editBlock3
+scoreboard players tag @s remove editBlock4
+scoreboard players tag @s remove editBlock5
+scoreboard players tag @s remove editBlock6
+scoreboard players tag @s remove editBlock7
+scoreboard players tag @s remove editBlock8
+scoreboard players tag @s remove editBlock9
+scoreboard players tag @s remove editBlock10
+
 function block_placer:tags/inventorytest/clear_hotbar_slot_tags
 
 playsound minecraft:ui.button.click ambient @s ~ ~ ~
