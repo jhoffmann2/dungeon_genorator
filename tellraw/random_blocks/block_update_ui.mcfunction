@@ -38,23 +38,60 @@ execute @s[tag=editBlock9] ~ ~ ~ scoreboard players tag @e[name=block9Memory] ad
 execute @s[tag=editBlock10] ~ ~ ~ scoreboard players tag @e[name=block10Memory] add pasteSlotTags
 
 function dungeon_genorator:block_placer_helper/copy_slot_tags/copy_hotbar_tags
+function dungeon_genorator:block_placer_helper/test/test_hotbar_loot
 
 playsound minecraft:ui.button.click ambient @s ~ ~ ~
 
 scoreboard players tag @s remove displaying_hotbar 
 scoreboard players tag @s remove displaying_all_slots 
-tellraw @a ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n------ Block List ------\n","bold":true},{"text":"[ Update With Hotbar  ]","color":"gold","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function block_placer:tellraw/toggleBlocks/update_with_hotbar"},"bold":false}]function block_placer:tellraw/toggleBlocks/slots/slot-1
-function block_placer:tellraw/toggleBlocks/slots/slot0
-function block_placer:tellraw/toggleBlocks/slots/slot1
-function block_placer:tellraw/toggleBlocks/slots/slot2
-function block_placer:tellraw/toggleBlocks/slots/slot3
-function block_placer:tellraw/toggleBlocks/slots/slot4
-function block_placer:tellraw/toggleBlocks/slots/slot5
-function block_placer:tellraw/toggleBlocks/slots/slot6
-function block_placer:tellraw/toggleBlocks/slots/slot7
-function block_placer:tellraw/toggleBlocks/slots/slot8
-tellraw @a ["",{"text":"----------------------","bold":true}]
 
-tellraw @s ["",{"text":"\n              ","color":"gray"},{"text":"| Reload |","color":"gray","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_update_ui"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
+
+scoreboard objectives add UIstartLine dummy
+scoreboard players add @s UIstartLine 0
+
+scoreboard objectives add UIcurrentLine dummy
+scoreboard players set @s UIcurrentLine 1
+
+tellraw @s ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n------ Block List ------\n","bold":true},{"text":"    [ Update With Hotbar  ]","color":"gold","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function block_placer:tellraw/toggleBlocks/update_with_hotbar"},"bold":false}]function block_placer:tellraw/toggleBlocks/slots/slot-1
+
+
+tellraw @s[score_UIstartLine_min=2] ["",{"text":"[^]","color":"red","bold":false,"clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/decrement/UIstartLine"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click"}]}}}]
+tellraw @s[score_UIstartLine=1] ["",{"text":"[^]","color":"dark_gray","bold":false}]
+
+
+execute @s[score_UIstartLine=1,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot0
+    execute @s[score_UIstartLine=2,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot0 if @e[tag=Slot0IsLootBlock]
+execute @s[score_UIstartLine=3,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot1
+    execute @s[score_UIstartLine=4,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot1 if @e[tag=Slot1IsLootBlock]
+execute @s[score_UIstartLine=5,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot2
+    execute @s[score_UIstartLine=6,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot2 if @e[tag=Slot2IsLootBlock]
+execute @s[score_UIstartLine=7,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot3
+    execute @s[score_UIstartLine=8,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot3 if @e[tag=Slot3IsLootBlock]
+execute @s[score_UIstartLine=9,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot4
+    execute @s[score_UIstartLine=10,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot4 if @e[tag=Slot4IsLootBlock]
+execute @s[score_UIstartLine=11,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot5
+    execute @s[score_UIstartLine=12,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot5 if @e[tag=Slot5IsLootBlock]
+execute @s[score_UIstartLine=13,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot6
+    execute @s[score_UIstartLine=14,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot6 if @e[tag=Slot6IsLootBlock]
+execute @s[score_UIstartLine=15,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot7
+    execute @s[score_UIstartLine=16,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot7 if @e[tag=Slot7IsLootBlock]
+scoreboard players tag @s[score_UIstartLine=17,score_UIcurrentLine=12] add downArrowOff
+execute @s[score_UIstartLine=17,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleBlocks/slots/slot8
+
+    execute @s[score_UIstartLine=18,score_UIcurrentLine_min=13] ~ ~ ~ function block_placer:tellraw/willlootprint/slots/slot8
+    scoreboard players tag @s[tag=Slot8LootWillPrint] remove downArrowOff
+    execute @s[score_UIstartLine=18,score_UIcurrentLine=12] ~ ~ ~ function block_placer:tellraw/toggleloot/slots/slot8 if @e[tag=Slot8IsLootBlock]
+    
+    
+#tellraw @s[score_UIcurrentLine_min=13] ["",{"text":"[v]","color":"red","bold":false,"clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/increment/UIstartLine"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click"}]}}}]
+#tellraw @s[score_UIcurrentLine=12] ["",{"text":"[v]","color":"dark_gray","bold":false}]
+tellraw @s[tag=!downArrowOff] ["",{"text":"[v]","color":"red","bold":false,"clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/increment/UIstartLine"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click"}]}}}]
+tellraw @s[tag=downArrowOff] ["",{"text":"[v]","color":"dark_gray","bold":false}]
+
+scoreboard players tag @s remove downArrowOff
+scoreboard players tag @s remove Slot8LootWillPrint
+
+tellraw @a ["",{"text":"----------------------","bold":true}]
+tellraw @s ["",{"text":"              ","color":"gray"},{"text":"| Reload |","color":"gray","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_update_ui"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
 tellraw @s ["",{"text":"               ","color":"gray"},{"text":"| Back |","color":"gray","clickEvent":{"action":"run_command","value":"/execute @s ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/set"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"click","color":"white"}]}},"insertion":"tellraw @s %s"}]
 tellraw @s ["",{"text":" ##################### ","color":"aqua","bold":true,"underlined":true,"italic":false}]

@@ -23,6 +23,7 @@ tellraw @a[tag=debug] ["",{"text":"Max Floor: "},{"score":{"name":"maxFloor","ob
 
 function dungeon_genorator:rooms/build_branches_helper
 scoreboard players tag @e[tag=multidirectional,name=node,type=armor_stand] add buildMultiRoom
+scoreboard players tag @e[tag=multidirectional,name=node,type=armor_stand] add maxDirections
 function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes
 function dungeon_genorator:rooms/construction/multidirectional/construct
 scoreboard players tag @e[name=node,type=armor_stand] remove buildMultiRoom

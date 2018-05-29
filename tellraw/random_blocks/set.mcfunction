@@ -24,6 +24,8 @@ scoreboard players tag @s remove editBlock8
 scoreboard players tag @s remove editBlock9
 scoreboard players tag @s remove editBlock10
 
+scoreboard players set @s UIstartLine 1
+
 function block_placer:tags/inventorytest/clear_hotbar_slot_tags
 
 playsound minecraft:ui.button.click ambient @s ~ ~ ~

@@ -24,5 +24,4 @@
 
     #remove multidirectional tag on updated node
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] remove multidirectional
-	execute @e[name=editor,type=armor_stand] ~ ~ ~ execute @e[name=node,type=armor_stand,tag=multidirectional,r=1] ~ ~ ~ say failure
 function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes if @e[name=node,type=armor_stand,tag=multidirectional]

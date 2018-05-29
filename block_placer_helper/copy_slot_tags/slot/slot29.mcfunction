@@ -6,7 +6,7 @@ execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=DioriteInSlot29] ~ ~ ~ scorebo
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=PolishedDioriteInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add PolishedDioriteInSlot29 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=AndesiteInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add AndesiteInSlot29 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=PolishedAndesiteInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add PolishedAndesiteInSlot29 
-execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=GrassInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add GrassInSlot29 
+execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=GrassBlockInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add GrassBlockInSlot29 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=DirtInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add DirtInSlot29 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=CoarseDirtInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add CoarseDirtInSlot29 
 execute @e[tag=copySlotTags] ~ ~ ~ execute @s[tag=PodzolInSlot29] ~ ~ ~ scoreboard players tag @e[tag=pasteSlotTags] add PodzolInSlot29 

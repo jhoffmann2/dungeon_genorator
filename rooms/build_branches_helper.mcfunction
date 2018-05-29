@@ -17,7 +17,7 @@ tellraw @a[tag=debug] ["",{"text":"Current Floor: "},{"score":{"name":"@e[name=e
 
 #teleport editor to random node on current floor
 scoreboard players operation @e[name=node,type=armor_stand] floor -= @e[name=editor,type=armor_stand] currentFloor
-tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,score_floor_min=0,score_floor=0]
+tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,score_floor_min=0,score_floor=0,tag=!maxDirections]
 scoreboard players operation @e[name=node,type=armor_stand] floor += @e[name=editor,type=armor_stand] currentFloor
 
 #update the floor score for editor to new location
