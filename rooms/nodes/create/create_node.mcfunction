@@ -20,3 +20,5 @@ execute @e[name=rDirection,type=armor_stand,tag=yPos] ~ ~ ~ execute @s[tag=nextD
 execute @e[name=rDirection,type=armor_stand,tag=yNeg] ~ ~ ~ execute @s[tag=nextDirection] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] add yPos
 execute @e[name=rDirection,type=armor_stand,tag=zPos] ~ ~ ~ execute @s[tag=nextDirection] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] add zNeg
 execute @e[name=rDirection,type=armor_stand,tag=zNeg] ~ ~ ~ execute @s[tag=nextDirection] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] add zPos
+
+execute @e[name=rDirection,type=armor_stand,tag=nextDirection] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand] directionCount 1

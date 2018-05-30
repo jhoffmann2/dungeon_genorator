@@ -21,15 +21,22 @@ scoreboard players remove @e[name=editor,type=armor_stand] bail 1
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ execute @e[r=1,name=node,tag=yNeg] ~ ~ ~ scoreboard players tag @e[name=editor,type=armor_stand] add set_yPos
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ execute @e[r=1,name=node,tag=zNeg] ~ ~ ~ scoreboard players tag @e[name=editor,type=armor_stand] add set_zPos
 	
+	
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/prev
 	
-	execute @e[name=editor,tag=set_xPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add xPos
-	execute @e[name=editor,tag=set_yPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add yPos
-	execute @e[name=editor,tag=set_zPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add zPos
-	execute @e[name=editor,tag=set_xNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add xNeg
-	execute @e[name=editor,tag=set_yNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add yNeg
-	execute @e[name=editor,tag=set_zNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand] add zNeg
-	
+	execute @e[name=editor,tag=set_xPos] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!xPos] directionCount 1
+	execute @e[name=editor,tag=set_xPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!xPos] add xPos
+	execute @e[name=editor,tag=set_yPos] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!yPos] directionCount 1
+	execute @e[name=editor,tag=set_yPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!yPos] add yPos
+	execute @e[name=editor,tag=set_zPos] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!zPos] directionCount 1
+	execute @e[name=editor,tag=set_zPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!zPos] add zPos
+	execute @e[name=editor,tag=set_xNeg] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!xNeg] directionCount 1
+	execute @e[name=editor,tag=set_xNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!xNeg] add xNeg
+	execute @e[name=editor,tag=set_yNeg] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!yNeg] directionCount 1
+	execute @e[name=editor,tag=set_yNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!yNeg] add yNeg
+	execute @e[name=editor,tag=set_zNeg] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!zNeg] directionCount 1
+	execute @e[name=editor,tag=set_zNeg] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!zNeg] add zNeg
+    
 	scoreboard players tag @e[name=editor,type=armor_stand] remove set_xPos
 	scoreboard players tag @e[name=editor,type=armor_stand] remove set_yPos
 	scoreboard players tag @e[name=editor,type=armor_stand] remove set_zPos

@@ -15,6 +15,7 @@ scoreboard objectives add controls dummy
 scoreboard objectives add ZERO dummy
 scoreboard objectives add ID dummy
 scoreboard objectives add branch dummy
+scoreboard objectives add directionCount dummy
 
 scoreboard players set zero ZERO 0
 

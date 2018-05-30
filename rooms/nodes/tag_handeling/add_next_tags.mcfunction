@@ -39,7 +39,6 @@ execute @e[name=editor,type=armor_stand,tag=cancelNextTags] ~ ~ ~ execute @e[nam
 
 
 
-
 kill @e[name=tempLocationCheck,type=armor_stand]
 
 scoreboard players tag @e[name=editor,type=armor_stand,tag=cancelNextTags] remove cancelNextTags

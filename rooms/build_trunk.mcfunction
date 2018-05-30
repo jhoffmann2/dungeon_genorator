@@ -24,5 +24,10 @@ scoreboard objectives remove bailRooms
 function dungeon_genorator:rooms/nodes/tag_handeling/add_next_tags
 function dungeon_genorator:rooms/nodes/tag_handeling/add_variation_tags
 function dungeon_genorator:rooms/construction/construct
+#scoreboard players set @e[name=node,type=armor_stand] directionCount 2
+#execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/first
+#execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players set @e[name=node,type=armor_stand,r=1] directionCount 1
+#execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/last
+#execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players set @e[name=node,type=armor_stand,r=1] directionCount 1
 
 execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions

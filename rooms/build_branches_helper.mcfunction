@@ -17,19 +17,26 @@ tellraw @a[tag=debug] ["",{"text":"Current Floor: "},{"score":{"name":"@e[name=e
 
 #teleport editor to random node on current floor
 scoreboard players operation @e[name=node,type=armor_stand] floor -= @e[name=editor,type=armor_stand] currentFloor
-tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,score_floor_min=0,score_floor=0,tag=!maxDirections]
+tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,score_floor_min=0,score_floor=0,score_directionCount=2]
 scoreboard players operation @e[name=node,type=armor_stand] floor += @e[name=editor,type=armor_stand] currentFloor
 
 #update the floor score for editor to new location
 scoreboard players operation @e[name=editor,type=armor_stand] floor = @e[name=editor,type=armor_stand] currentFloor
 tellraw @a[tag=debug] ["",{"text":"Floor: "},{"score":{"name":"@e[name=editor]","objective":"floor"},"insertion":"tellraw @s %s"}]
 
+
 #construct branch
+execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] add branchStart
 function dungeon_genorator:rooms/nodes/create/place_nodes
 scoreboard objectives remove bailRooms      #   clean up temp variable for place_nodes itteration
-function dungeon_genorator:rooms/nodes/tag_handeling/add_next_tags
-function dungeon_genorator:rooms/nodes/tag_handeling/add_variation_tags
-function dungeon_genorator:rooms/construction/construct
+
+execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/tag_handeling/add_next_tags unless @e[name=node,type=armor_stand,r=1,tag=branchStart]
+execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/tag_handeling/add_variation_tags unless @e[name=node,type=armor_stand,r=1,tag=branchStart]
+execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/construction/construct unless @e[name=node,type=armor_stand,r=1,tag=branchStart]
+
+execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,tag=branchStart,r=1] remove multidirectional
+scoreboard players tag @e[name=node,type=armor_stand] remove branchStart
+
 
 #repeat if currentFloor is less than maxFloor
 scoreboard players operation @e[name=editor,type=armor_stand] currentFloor -= maxFloor floor
