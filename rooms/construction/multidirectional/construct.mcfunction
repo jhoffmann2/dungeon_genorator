@@ -5,7 +5,7 @@
 # Version:		1.12
 # Description:	after the web is built, construct the physical rooms for that spacific branch/trunk
 ######################################################################################
-execute @e[name=node,type=armor_stand,tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:block_placer_helper/delete_block_stands
+execute @e[name=node,type=armor_stand,tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:block_placer/delete_block_stands
 
 execute @e[name=node,type=armor_stand,tag=s1] ~ ~ ~ execute @s[tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:rooms/construction/multidirectional/construct_s1
 execute @e[name=node,type=armor_stand,tag=s2] ~ ~ ~ execute @s[tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:rooms/construction/multidirectional/construct_s2

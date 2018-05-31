@@ -25,4 +25,4 @@ function dungeon_genorator:rooms/msc/create/rdirections
 kill @e[name=rVariation]
 function dungeon_genorator:rooms/msc/create/rVariations
 
-function dungeon_genorator:block_placer_helper/create/blockmemory
+function dungeon_genorator:block_placer/create/blockmemory
