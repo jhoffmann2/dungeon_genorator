@@ -21,11 +21,4 @@ scoreboard players remove @e[name=editor,type=armor_stand] currentFloor 1
 
 tellraw @a[tag=debug] ["",{"text":"Max Floor: "},{"score":{"name":"maxFloor","objective":"floor"},"insertion":"tellraw @s %s"}] 
 
-function dungeon_genorator:rooms/build_branches_helper 
-scoreboard players tag @e[tag=multidirectional,name=node,type=armor_stand] add buildMultiRoom
-function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes 
-function dungeon_genorator:rooms/construction/multidirectional/construct 
-scoreboard players tag @e[name=node,type=armor_stand] remove buildMultiRoom 
-
-tellraw @a[tag=debug] ["",{"text":"Done"}] 
-execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+function dungeon_genorator:rooms/build_branches_helper

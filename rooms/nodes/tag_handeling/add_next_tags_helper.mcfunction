@@ -21,9 +21,8 @@ scoreboard players remove @e[name=editor,type=armor_stand] bail 1
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ execute @e[r=1,name=node,tag=yNeg] ~ ~ ~ scoreboard players tag @e[name=editor,type=armor_stand] add set_yPos
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ execute @e[r=1,name=node,tag=zNeg] ~ ~ ~ scoreboard players tag @e[name=editor,type=armor_stand] add set_zPos
 	
-	
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/prev
-	
+    
 	execute @e[name=editor,tag=set_xPos] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!xPos] directionCount 1
 	execute @e[name=editor,tag=set_xPos] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!xPos] add xPos
 	execute @e[name=editor,tag=set_yPos] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!yPos] directionCount 1
@@ -45,6 +44,6 @@ scoreboard players remove @e[name=editor,type=armor_stand] bail 1
 	scoreboard players tag @e[name=editor,type=armor_stand] remove set_zNeg
 	
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ function dungeon_genorator:rooms/nodes/next
-	
+    
 function dungeon_genorator:rooms/nodes/tag_handeling/add_next_tags_helper unless @e[name=editor,type=armor_stand,score_bail=0]
 execute @e[name=editor,type=armor_stand,score_bail=0] ~ ~ ~ scoreboard objectives remove bail

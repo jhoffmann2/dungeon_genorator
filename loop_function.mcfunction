@@ -29,7 +29,11 @@ scoreboard players tag @a[tag=!firstRunDG] add ranStartDG
 scoreboard players reset @a[score_quitDG_min=1] quitDG
 
 #Always Run
-#execute @a[tag=update_unknown_UI] ~ ~ ~ execute @a[tag=editBlock1] ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_1
 execute @a[tag=update_unknown_UI] ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_update_ui
-
 scoreboard players tag @a[tag=update_unknown_UI] remove update_unknown_UI
+
+    #repeat functions that display loading screens
+    execute @e[name=editor,type=armor_stand,tag=repeat1] ~ ~ ~ function dungeon_genorator:rooms/build_branches_helper
+    execute @e[name=editor,type=armor_stand,tag=repeat2] ~ ~ ~ function dungeon_genorator:rooms/build_trunk
+    execute @e[tag=repeat3] ~ ~ ~ function dungeon_genorator:block_placer/place_block_helper
+    execute @e[name=editor,type=armor_stand,tag=repeat4] ~ ~ ~ function dungeon_genorator:block_placer/place_all_blocks

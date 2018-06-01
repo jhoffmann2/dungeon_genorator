@@ -23,3 +23,5 @@ execute @e[name=node,type=armor_stand,score_branch_min=0,score_branch=0,tag=s4] 
 execute @e[name=node,type=armor_stand,score_branch_min=0,score_branch=0,tag=s5] ~ ~ ~ execute @s[tag=!trunk] ~ ~ ~ function dungeon_genorator:rooms/construction/construct_s5
 execute @e[name=node,type=armor_stand,score_branch_min=0,score_branch=0,tag=s6] ~ ~ ~ execute @s[tag=!trunk] ~ ~ ~ function dungeon_genorator:rooms/construction/construct_s6
 scoreboard players operation @e[type=armor_stand,name=node,tag=!trunk] branch += currentBranch branch
+
+kill @e[type=item]
