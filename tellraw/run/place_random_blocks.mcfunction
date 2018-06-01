@@ -11,5 +11,3 @@ tellraw @s ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 tellraw @s ["",{"text":" ##################### ","color":"aqua","bold":true,"underlined":true,"italic":false}]
 
 function dungeon_genorator:block_placer/place_all_blocks
-execute @s[tag=!ui7] ~ ~ ~ function dungeon_genorator:tellraw/random_blocks
-execute @s[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
