@@ -17,9 +17,22 @@
 #
 ######################################################################################
 
+execute @a ~ ~ ~ scoreboard players tag @e[name=node,r=10] add keepRoom
+execute @a ~ ~ ~ scoreboard players tag @e[name=node,rm=10,tag=keepRoom] remove keepRoom
+
 #Run the first time setting up loop function:
 	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:setup
 	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:edit
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block1PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block2PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block3PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block4PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block5PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block6PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block7PlacementRate controls 30
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block8PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block9PlacementRate controls 70
+    execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard players set block10PlacementRate controls 70
 execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard objectives add quitDG stat.leaveGame
 scoreboard players tag @a[tag=!firstRunDG] add ranStartDG
 

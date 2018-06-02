@@ -56,7 +56,9 @@ execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkS
 
 execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5] ~ ~ ~ function dungeon_genorator:rooms/construction/construct
 
-execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+execute @e[type=armor_stand,name=editor,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks
+execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=!place_random_block] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+
 execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5] ~ ~ ~ scoreboard objectives remove buildTrunkStep
 
 scoreboard players tag @e[name=editor,type=armor_stand,score_buildTrunkStep=4] add repeat2

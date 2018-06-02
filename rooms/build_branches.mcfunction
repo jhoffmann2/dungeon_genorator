@@ -22,3 +22,5 @@ scoreboard players remove @e[name=editor,type=armor_stand] currentFloor 1
 tellraw @a[tag=debug] ["",{"text":"Max Floor: "},{"score":{"name":"maxFloor","objective":"floor"},"insertion":"tellraw @s %s"}] 
 
 function dungeon_genorator:rooms/build_branches_helper
+
+execute @e[type=armor_stand,name=editor,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks

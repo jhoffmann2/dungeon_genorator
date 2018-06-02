@@ -63,5 +63,8 @@ scoreboard players tag @e[name=editor,type=armor_stand,score_currentFloor=-1] ad
 scoreboard players operation @e[name=editor,type=armor_stand] currentFloor += maxFloor floor
 
 scoreboard players tag @e[name=editor,type=armor_stand,tag=repeatBuildHelper] add repeat1
-execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+
+
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
 #execute @e[name=editor,type=armor_stand,tag=repeatBuildHelper] ~ ~ ~ function dungeon_genorator:rooms/build_branches_helper

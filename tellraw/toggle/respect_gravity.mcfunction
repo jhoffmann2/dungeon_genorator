@@ -10,4 +10,4 @@ scoreboard players tag @e[type=armor_stand,name=editor] remove respect_gravity
 scoreboard players tag @e[type=armor_stand,name=editor,tag=temp_gravity] add respect_gravity
 scoreboard players tag @e[type=armor_stand,name=editor] remove temp_gravity
 
-execute @a[tag=ui4] ~ ~ ~ function dungeon_genorator:tellraw/genoration_boundries_2
+execute @s ~ ~ ~ function dungeon_genorator:tellraw/build_functions
