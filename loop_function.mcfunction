@@ -17,8 +17,9 @@
 #
 ######################################################################################
 
-execute @a ~ ~ ~ scoreboard players tag @e[name=node,r=10] add keepRoom
-execute @a ~ ~ ~ scoreboard players tag @e[name=node,rm=10,tag=keepRoom] remove keepRoom
+execute @a ~ ~ ~ scoreboard players tag @e[name=node,r=6] add keepRoom
+execute @a ~ ~ ~ scoreboard players tag @e[name=node,rm=6,tag=keepRoom] remove keepRoom
+
 
 #Run the first time setting up loop function:
 	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:setup

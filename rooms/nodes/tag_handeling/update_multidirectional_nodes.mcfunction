@@ -5,7 +5,7 @@
 # Version:		1.12.2
 # Description:	Recursively update multidirectional nodes
 ######################################################################################
-
+say 1
     #tp editor to update random multidirectional node
 	tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,tag=multidirectional]
     
