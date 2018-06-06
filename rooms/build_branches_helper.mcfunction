@@ -6,8 +6,8 @@
 # Description:	the recursive part of build_branches
 ######################################################################################
 
-
 #tag handeling
+scoreboard players tag @a add loading
 scoreboard players tag @e[name=editor,type=armor_stand] remove repeatBuildHelper
 scoreboard players tag @e[name=editor,type=armor_stand] remove repeat1
 scoreboard players add currentBranch branch 1
@@ -46,12 +46,11 @@ function dungeon_genorator:rooms/nodes/create/place_nodes unless @e[name=editor,
 execute @e[name=editor,type=armor_stand,tag=!skipFloor] ~ ~ ~ scoreboard objectives remove bailRooms   #  clean up temp variable for place_nodes itteration
 function dungeon_genorator:rooms/nodes/tag_handeling/add_next_tags unless @e[name=editor,type=armor_stand,tag=skipFloor]
 execute @e[name=editor,type=armor_stand,tag=!skipFloor] ~ ~ ~ scoreboard players tag @e[tag=multidirectional,name=node,type=armor_stand] add buildMultiRoom
-function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes unless @e[name=editor,type=armor_stand,tag=skipFloor]
+function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes
 
 #test if anything was actually built
 execute @e[name=editor,type=armor_stand,tag=!skipFloor] ~ ~ ~ execute @e[name=node] ~ ~ ~ scoreboard players operation @s temp -= @s directionCount
 execute @e[name=editor,type=armor_stand,tag=!skipFloor] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,score_temp_min=0] remove buildMultiRoom
-
 
 #construct
 execute @e[name=editor,type=armor_stand,tag=!skipFloor] ~ ~ ~ function dungeon_genorator:rooms/nodes/tag_handeling/add_variation_tags if @r[name=node,type=armor_stand,score_temp=-1]
@@ -68,6 +67,8 @@ scoreboard players operation @e[name=editor,type=armor_stand] currentFloor += ma
 scoreboard players tag @e[name=editor,type=armor_stand,tag=repeatBuildHelper] add repeat1
 
 
-execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ scoreboard players tag @s[tag=place_random_blocks] add repeat4
 execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ scoreboard players tag @a remove loading
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ say done loading build_branches
 #execute @e[name=editor,type=armor_stand,tag=repeatBuildHelper] ~ ~ ~ function dungeon_genorator:rooms/build_branches_helper

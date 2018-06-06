@@ -1,14 +1,14 @@
 ######################################################################################
-# Function:		loop_function
+# Function:		loop_function_noUI
 # Created By:	Jordan Hoffmann
 # Date:			6/26/17
 # Version:		1.12
-# Description:	the loop function for Dungeon Genorator
+# Description:	the loop function for Dungeon Genorator that doesn't display a user interface
 # Notes:
 #
 #								USE THE COMMAND:
 #------------------------------------------------------------------------------------
-#		    /gamerule gameLoopFunction dungeon_genorator:loop_function
+#		    /gamerule gameLoopFunction dungeon_genorator:loop_function_noUI
 #------------------------------------------------------------------------------------
 #			  			 within you're minecraft world
 #
@@ -17,27 +17,21 @@
 #
 ######################################################################################
 
-execute @a ~ ~ ~ scoreboard players tag @e[name=node,r=6] add keepRoom
-execute @a ~ ~ ~ scoreboard players tag @e[name=node,rm=6,tag=keepRoom] remove keepRoom
-
 
 #Run the first time setting up loop function:
 	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:setup
 	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:initiate_scores
     execute @a[tag=!ranStartDG] ~ ~ ~ spreadplayers ~ ~ 1 2 false @e[name=editor]
     execute @a[tag=!ranStartDG] ~ ~ ~ tp @e[name=editor] ~ ~3 ~
-	execute @a[tag=!ranStartDG] ~ ~ ~ function dungeon_genorator:edit
     execute @a[tag=!ranStartDG] ~ ~ ~ scoreboard objectives add quitDG stat.leaveGame
 scoreboard players tag @a[tag=!ranStartDG] add ranStartDG
 
 #Run every time the a player joins game
 	execute @a[score_quitDG_min=1] ~ ~ ~ function dungeon_genorator:setup
-	execute @a[score_quitDG_min=1] ~ ~ ~ function dungeon_genorator:edit
     execute @a[score_quitDG_min=1] ~ ~ ~ reload
 scoreboard players reset @a[score_quitDG_min=1] quitDG
 
 #Always Run
-    execute @a[tag=update_unknown_UI] ~ ~ ~ function dungeon_genorator:tellraw/random_blocks/block_update_ui
     scoreboard players tag @a[tag=update_unknown_UI] remove update_unknown_UI
 
     #repeat functions that display loading screens

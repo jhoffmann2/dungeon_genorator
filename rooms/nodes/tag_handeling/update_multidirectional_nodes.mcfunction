@@ -5,7 +5,6 @@
 # Version:		1.12.2
 # Description:	Recursively update multidirectional nodes
 ######################################################################################
-say 1
     #tp editor to update random multidirectional node
 	tp @e[name=editor,type=armor_stand] @r[name=node,type=armor_stand,tag=multidirectional]
     
@@ -28,6 +27,6 @@ say 1
     execute @e[name=editor,type=armor_stand] ~ ~ ~-8 execute @e[r=1,name=node,type=armor_stand,tag=zPos] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players add @e[r=1,name=node,type=armor_stand,tag=!zNeg] directionCount 1
     execute @e[name=editor,type=armor_stand] ~ ~ ~-8 execute @e[r=1,name=node,type=armor_stand,tag=zPos] ~ ~ ~ execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[r=1,name=node,type=armor_stand,tag=!zNeg] add zNeg
 
-    remove multidirectional tag on updated node
+    #remove multidirectional tag on updated node
 	execute @e[name=editor,type=armor_stand] ~ ~ ~ scoreboard players tag @e[name=node,type=armor_stand,r=1] remove multidirectional
 function dungeon_genorator:rooms/nodes/tag_handeling/update_multidirectional_nodes if @e[name=node,type=armor_stand,tag=multidirectional]

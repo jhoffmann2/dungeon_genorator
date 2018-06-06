@@ -5,6 +5,7 @@
 # Version:		1.12
 # Description:	build the rooms in the main trunk
 ######################################################################################
+scoreboard players tag @a add loading
 scoreboard players tag @e[name=editor,type=armor_stand] remove repeat2
 scoreboard objectives add buildTrunkStep dummy
 scoreboard players add @e[name=editor,type=armor_stand] buildTrunkStep 0
@@ -56,8 +57,9 @@ execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkS
 
 execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5] ~ ~ ~ function dungeon_genorator:rooms/construction/construct
 
-execute @e[type=armor_stand,name=editor,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks
-execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=!place_random_block] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:block_placer/place_all_blocks
+execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=!place_random_blocks] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
+execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5,tag=!place_random_blocks] ~ ~ ~ scoreboard players tag @a remove loading
 
 execute @e[name=editor,type=armor_stand,score_buildTrunkStep=5,score_buildTrunkStep_min=5] ~ ~ ~ scoreboard objectives remove buildTrunkStep
 

@@ -12,12 +12,9 @@ execute @a[tag=!editor_exists] ~ ~ ~ summon armor_stand ~ ~ ~ {CustomName:"edito
 scoreboard players tag @a remove editor_exists
 
 scoreboard objectives add controls dummy
-scoreboard objectives add ZERO dummy
 scoreboard objectives add ID dummy
 scoreboard objectives add branch dummy
 scoreboard objectives add directionCount dummy
-
-scoreboard players set zero ZERO 0
 
 kill @e[name=rDirection]
 function dungeon_genorator:rooms/msc/create/rdirections

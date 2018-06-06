@@ -15,7 +15,8 @@ scoreboard players set Neg_One xCoordinate -1
 stats entity @s set AffectedBlocks @s temp_coord
 scoreboard players add @s temp_coord 0
 
-clone ~ ~ ~ ~ ~ ~ 0 0 0
+#setblock 0 0 0 minecraft:air
+clone ~ ~ ~ ~ ~ ~ ~ 0 ~
 setblock ~ ~ ~ stone
 
 function dungeon_genorator:rooms/msc/scoreboard/update_x
@@ -24,7 +25,8 @@ function dungeon_genorator:rooms/msc/scoreboard/update_y
 
 function dungeon_genorator:rooms/msc/scoreboard/update_z
 
-clone 0 0 0 0 0 0 ~ ~ ~
+clone ~ 0 ~ ~ 0 ~ ~ ~ ~
+setblock ~ 0 ~ bedrock
 
 scoreboard objectives remove temp_coord
 scoreboard players reset Neg_One xCoordinate
