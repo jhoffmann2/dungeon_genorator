@@ -15,5 +15,4 @@ execute @e[name=node,type=armor_stand,tag=s4] ~ ~ ~ execute @s[tag=buildMultiRoo
 execute @e[name=node,type=armor_stand,tag=s5] ~ ~ ~ execute @s[tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:rooms/construction/multidirectional/construct_s5
 execute @e[name=node,type=armor_stand,tag=s6] ~ ~ ~ execute @s[tag=buildMultiRoom] ~ ~ ~ function dungeon_genorator:rooms/construction/multidirectional/construct_s6
 
-
 kill @e[type=item]

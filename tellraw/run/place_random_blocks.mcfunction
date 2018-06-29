@@ -1,5 +1,5 @@
 ######################################################################################
-# Function:		build_trunk
+# Function:		place_random_blocks
 # Created By:	Jordan Hoffmann
 # Date:			7/20/17
 # Version:		1.12

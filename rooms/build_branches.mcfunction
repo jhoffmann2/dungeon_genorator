@@ -23,4 +23,4 @@ tellraw @a[tag=debug] ["",{"text":"Max Floor: "},{"score":{"name":"maxFloor","ob
 
 function dungeon_genorator:rooms/build_branches_helper
 
-execute @e[type=armor_stand,name=editor,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks
+#execute @e[type=armor_stand,name=editor,tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:tellraw/run/place_random_blocks

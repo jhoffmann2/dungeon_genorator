@@ -66,9 +66,7 @@ scoreboard players operation @e[name=editor,type=armor_stand] currentFloor += ma
 
 scoreboard players tag @e[name=editor,type=armor_stand,tag=repeatBuildHelper] add repeat1
 
-
-execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ scoreboard players tag @s[tag=place_random_blocks] add repeat4
+execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=place_random_blocks] ~ ~ ~ function dungeon_genorator:block_placer/place_all_blocks
 execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ execute @a[tag=ui7] ~ ~ ~ function dungeon_genorator:tellraw/build_functions
 execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ scoreboard players tag @a remove loading
-execute @e[name=editor,type=armor_stand,tag=!repeatBuildHelper] ~ ~ ~ execute @s[tag=!place_random_blocks] ~ ~ ~ say done loading build_branches
 #execute @e[name=editor,type=armor_stand,tag=repeatBuildHelper] ~ ~ ~ function dungeon_genorator:rooms/build_branches_helper
